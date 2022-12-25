@@ -1,0 +1,2 @@
+# django_simple_authentication2
+ Djangoの認証機能の簡易版2個目
