@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
+{% block main %}
 <h2>会員ページ</h2>
+<p>{{ user }}さん、こんにちわ</p>
+
 <p><a href="{% url 'logout' %}">ログアウト</a></p>
 <p><a href="{% url 'password_change' %}">パスワード再設定</a></p>
 <p><a href="{% url 'passwortd_reset' %}">パスワードを忘れた場合</a></p>
+{% endblock main %}
