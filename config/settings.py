@@ -127,6 +127,6 @@ LOGOUT_REDIRECT_URL = "/login/"
 
 AUTH_USER_MODEL = 'registration.User'
 
-
+FRONTEND_URL = "https://localhost:8000"
 
 
