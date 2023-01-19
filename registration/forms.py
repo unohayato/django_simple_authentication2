@@ -9,6 +9,19 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 User = get_user_model()
 
+subject = "登録確認"
+message_template = """
+ご登録ありがとうございます。
+以下URLをクリックして登録を完了してください。
+
+"""
+
+def get_activate_url(user):
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
+    token = default_token_generator.make_token(user)
+    return settings.FRONTEND_URL + "/activate/{}/{}/".format(uid, token)
+
+
 class SignUpForm(UserCreationForm):
   class Meta:
     model = User
